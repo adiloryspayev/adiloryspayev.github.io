@@ -1,0 +1,399 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.4s ease;
+}
+
+/* Light Theme */
+body[data-theme="light"] {
+    background-color: #F5F5F5; /* Light Gray */
+    color: #2A2D34; /* Dark Slate */
+}
+
+body[data-theme="light"] .section {
+    background-color: #F5F5F5;
+    /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08); */
+}
+
+body[data-theme="light"] nav {
+    background-color: #2A2D34;
+}
+
+body[data-theme="light"] .section h1,
+body[data-theme="light"] .section h2 {
+    color: #2A2D34;
+}
+
+body[data-theme="light"] .section h2 {
+    border-bottom: 2px solid #6A6E89; /* Lighter Steel Blue */
+}
+
+body[data-theme="light"] .skills,
+body[data-theme="light"] .cv-skills {
+    color: #6A6E89;
+}
+
+body[data-theme="light"] footer {
+    background-color: #2A2D34;
+}
+
+body[data-theme="light"] .nav-menu li a:hover,
+body[data-theme="light"] .nav-menu li a.active {
+    color: #6A6E89;
+}
+
+body[data-theme="light"] .theme-toggle:hover {
+    color: #6A6E89;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+    background-color: #2A2D34; /* Dark Slate */
+    color: #F5F5F5; /* Light Gray */
+}
+
+body[data-theme="dark"] .section {
+    background-color: #2A2D34;
+    /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25); */
+}
+
+body[data-theme="dark"] nav {
+    background-color: #1F2329; /* Darker Slate */
+}
+
+body[data-theme="dark"] .section h1,
+body[data-theme="dark"] .section h2 {
+    color: #F5F5F5;
+}
+
+body[data-theme="dark"] .section h2 {
+    border-bottom: 2px solid #A8B1D6; /* Lighter Blue-Gray */
+}
+
+body[data-theme="dark"] .skills,
+body[data-theme="dark"] .cv-skills {
+    color: #A8B1D6;
+}
+
+body[data-theme="dark"] footer {
+    background-color: #1F2329;
+}
+
+body[data-theme="dark"] .nav-menu li a:hover,
+body[data-theme="dark"] .nav-menu li a.active {
+    color: #A8B1D6;
+}
+
+body[data-theme="dark"] .theme-toggle:hover {
+    color: #A8B1D6;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: inherit;
+        /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-menu li a {
+        padding: 0.9rem;
+    }
+}
+
+/* Container & Sections */
+.container {
+    max-width: 1200px;
+    margin: 5rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: left; /* Left-aligned for About page */
+    font-weight: 700;
+}
+
+.section h2 {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 2px solid #6A6E89; /* Lighter Steel Blue in light mode */
+}
+
+body[data-theme="dark"] .profile-img {
+    border-color: #A8B1D6; /* Lighter Blue-Gray in dark mode */
+}
+
+/* Entry Formatting (Non-CV Pages) */
+.entry {
+    margin-bottom: 1.5rem;
+    overflow: hidden; /* Clears float */
+}
+
+.entry-about{
+    display: flex;
+    margin-bottom: 1.5rem;
+    overflow: hidden; /* Clears float */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entry h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.entry .details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+}
+
+body[data-theme="dark"] .entry .details {
+    color: #ccc;
+}
+
+.entry .description {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.entry .description ul {
+    list-style-type: disc; /* Default bullet style */
+    padding-left: 20px; /* Add some padding for better alignment */
+    margin-top: 10px; /* Add spacing above the list */
+    margin-bottom: 10px; /* Add spacing below the list */
+}
+
+.entry .description li {
+    margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.cv-entry .description ul {
+    list-style-type: disc; /* Default bullet style */
+    padding-left: 20px; /* Add some padding for better alignment */
+    margin-top: 10px; /* Add spacing above the list */
+    margin-bottom: 10px; /* Add spacing below the list */
+}
+
+.cv-entry .description li {
+    margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.entry-about .description {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    max-width: 70%;
+}
+
+.entry .skills {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* CV Specific Styling */
+.cv-section {
+    margin-bottom: 2rem;
+}
+
+.cv-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.cv-entry {
+    margin-bottom: 1rem;
+    padding: 0.8rem 0;
+}
+
+.cv-entry h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.cv-entry .date {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+body[data-theme="dark"] .cv-entry .date {
+    color: #ccc;
+}
+
+.cv-entry .details {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+body[data-theme="dark"] .cv-entry .details {
+    color: #ccc;
+}
+
+.cv-entry .description {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.cv-skills {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 2000;
+    transition: color 0.3s ease;
+}
+
+.social-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 0.8rem;
+    text-decoration: none;
+    color: inherit; /* Inherit color for SVG */
+}
+
+/* Default color for icons */
+.social-links a svg {
+    fill: currentColor; /* SVG will use the current text color */
+    transition: fill 0.3s ease;
+}
+
+/* Dark theme styles */
+body[data-theme="dark"] .social-links a {
+    color: #A8B1D6; /* Set color for dark theme */
+}
+
+/* Hover effect */
+.social-links a:hover {
+    color: #2A2D34; /* Set hover color */
+}
+
+/* Dark theme hover effect */
+body[data-theme="dark"] .social-links a:hover {
+    color: #F5F5F5; /* Set hover color for dark theme */
+}
+
+/* Light theme styles */
+body[data-theme="light"] .social-links a {
+    color: #2A2D34; /* Set color for dark theme */
+}
+
+/* Light theme hover effect */
+body[data-theme="light"] .social-links a:hover {
+    color: #A8B1D6; /* Set hover color for dark theme */
+}

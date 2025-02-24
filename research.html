@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adil Oryspayev - Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
+    <nav>
+        <div class="nav-container">
+            <a href="about.html" class="nav-brand">Adil Oryspayev</a>
+            <button class="nav-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle theme">🌞</button>
+    <div class="container">
+        <div class="section">
+            <h2>Research Experience</h2>
+            <div class="entry">
+                <h3>Modeling and Analysis in Measure Theory Researcher - Polymath Jr</h3>
+                <div class="details">Remote</div>
+                <div class="description">
+                    <ul>
+                        <li>Researched characterization of rectifiable measures carried by Lipschitz graphs with Professor Lisa Naples.</li>
+                        <li>Developed Java programs to check Lipschitz conditions.</li>
+                        <li>Presented at Joint Math Meetings in Seattle on January 8, 2025, and submitting paper for publication.</li>
+                    </ul>
+                </div>
+                <div class="skills">Skills: Java · Problem Solving · Microsoft Office · LaTeX · Research Skills · Algorithms · Real Analysis · Team Leadership · Presentation Skills · Mathematics · Programming</div>
+            </div>
+            <div class="entry">
+                <h3>Combinatorial Graph Theory Researcher - Fairfield University</h3>
+                <div class="details">Fairfield, Connecticut, United States · On-site</div>
+                <div class="description">
+                    <ul>
+                        <li>Researched Anti-van der Waerden number of Lollipop, Barbell, and Spider graphs with Professor Zhanar Berikkyzy.</li>
+                        <li>Created and optimized Java programs for graph colorings.</li>
+                        <li>Writing paper on Overleaf using LaTeX for publication in 2025.</li>
+                    </ul>
+                </div>
+                <div class="skills">Skills: Java · Problem Solving · LaTeX · Research Skills · Algorithms · Team Leadership · Mathematics · Graph Theory · Programming</div>
+            </div>
+            <div class="entry">
+                <h3>Sequence Analysis Researcher - Polymath Jr</h3>
+                <div class="details">Remote</div>
+                <div class="description">
+                    <ul>
+                        <li>Researched lexicographically least square-free words with given prefixes.</li>
+                        <li>Created Python programs to generate outputs up to 300,000 letters.</li>
+                        <li>Acknowledged in paper: <a href="https://arxiv.org/abs/2210.00508">arxiv.org/abs/2210.00508</a></li>
+                    </ul>
+                </div>
+                <div class="skills">Skills: Python · Problem Solving · LaTeX · Research Skills · Algorithms · Programming</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Adil Oryspayev. All rights reserved.</p>
+    </footer>
+    <script>
+        const toggleButton = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        toggleButton.textContent = savedTheme === 'light' ? '🌞' : '🌜';
+
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            toggleButton.textContent = newTheme === 'light' ? '🌞' : '🌜';
+            localStorage.setItem('theme', newTheme);
+        });
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
