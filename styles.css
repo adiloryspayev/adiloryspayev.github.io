@@ -405,3 +405,11 @@ body[data-theme="light"] .social-links a {
 body[data-theme="light"] .social-links a:hover {
     color: #A8B1D6; /* Set hover color for dark theme */
 }
+
+body[data-theme="dark"] .link {
+    color: blueviolet;
+}
+
+body[data-theme="light"] .link {
+    color: purple;
+}
