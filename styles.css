@@ -231,6 +231,14 @@ body[data-theme="dark"] .profile-img {
     font-weight: 600;
 }
 
+.entry h3 strong {
+    font-weight: 600; /* Makes IT Manager bold */
+}
+
+.entry h3 span {
+    font-weight: 400; /* Ensures The Daily Orange is not bold */
+}
+
 .entry .details {
     font-size: 0.9rem;
     color: #666;
