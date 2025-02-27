@@ -225,18 +225,18 @@ body[data-theme="dark"] .profile-img {
     align-items: center;
 }
 
-.entry h3 {
-    font-size: 1.2rem;
+
+.cv-entry .strong {
+    font-weight: 700; /* Makes IT Manager bold */
+    font-size: 1.125rem;
     margin-bottom: 0.4rem;
-    font-weight: 600;
+    display: inline;
 }
 
-.entry h3 strong {
-    font-weight: 600; /* Makes IT Manager bold */
-}
-
-.entry h3 span {
+.cv-entry .span {
     font-weight: 400; /* Ensures The Daily Orange is not bold */
+    font-size: 1.125rem;
+    display: inline;
 }
 
 .entry .details {
