@@ -154,7 +154,7 @@ nav {
         flex-direction: column;
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
         width: 100%;
         background: inherit;
         /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
@@ -427,10 +427,28 @@ body[data-theme="light"] .link {
         font-size: 1.2rem;
     }
 
-    .nav-menu li a {
+    .nav-menu {
+        right: 0;
+    }
+
+    body[data-theme="dark"] .nav-menu li a {
         padding: 0.5rem 1rem;
         background-color: #666;
         width: 30%;
+        margin-left: auto;
+    }
+
+    body[data-theme="light"] .nav-menu li a {
+        padding: 0.5rem 1rem;
+        background-color: #666;
+        width: 30%;
+        right: 0;
+        margin-left: auto;
+    }
+
+    body[data-theme="light"] .nav-menu li a:hover,
+    body[data-theme="light"] .nav-menu li a.active {
+        color: #A8B1D6;
     }
 
     /* Container & Sections */
