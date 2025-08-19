@@ -11,7 +11,7 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Adil Oryspayev</a>
-            <button class="nav-toggle">☰</button>
+            <button class="nav-toggle" aria-label="Open navigation">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">About</a></li>
                 <li><a href="research.html">Research</a></li>
@@ -20,226 +20,237 @@
             </ul>
         </div>
     </nav>
+
     <button class="theme-toggle" aria-label="Toggle theme">🌞</button>
+
     <div class="container">
         <div class="section">
             <h1>Curriculum Vitae</h1>
 
-            <!-- Education Section (Unchanged) -->
+            <!-- Education -->
             <div class="cv-section">
                 <h2>Education</h2>
                 <div class="cv-entry">
                     <h3>Syracuse University</h3>
-                    <div class="date">Aug 2024 - Jun 2028</div>
-                    <div class="details">Bachelor of Engineering and Computer Science - BS, Mathematics and Computer Science · Syracuse, New York</div>
-                    <div class="description">Grade: Freshman · GPA: 4.0 · Activities: CuseHacks, CanSat Competition · Awards: Invest in Success Scholar, Deans List</div>
-                    <div class="description">Coursework: Automata and Computability, Introduction to Probability, Elements of Computer Science, Physics 2, Calculus 3, Data Structures and Algorithms, Linear Algebra, Logic</div>
-                    <div class="cv-skills">Skills: Algorithms · Presentation Skills · Python · Programming · JavaScript · Microsoft Office · Competitive Programming · Java · OOP · Research Skills · Data Structures · Problem Solving · HTML · CSS · Team Leadership</div>
+                    <div class="date">Aug 2024 – May 2028 (Expected)</div>
+                    <div class="details">B.S. Computer Science · B.S. Mathematics · Syracuse, NY</div>
+                    <div class="description">GPA: 3.96</div>
+                    <div class="description">Coursework: Data Structures & Algorithms, Linear Algebra, Calculus III, Logic, Automata & Computability, Probability, Physics II.</div>
+                    <div class="cv-skills">Activities: OSPO, The Daily Orange (IT), CuseHacks, CanSat.</div>
                 </div>
-                <div class="cv-entry">
-                    <h3>Westhill High School</h3>
-                    <div class="date">Aug 2021 - Jun 2024</div>
-                    <div class="details">High School Diploma, Computer Science · Stamford, Connecticut</div>
-                    <div class="description">GPA: 4.27 · SAT: 1520 · Activities: Competitive Coding Team, Math Team</div>
-                    <div class="description">Coursework: AP Computer Science A, AP Psychology, AP Statistics, AP Physics 1, AP Physics C, AP Calculus BC + Teaching Assistant, AP English Literature & Composition, Data Structures + Teacher Assistant, Multivariable Calculus</div>
-                    <div class="cv-skills">Skills: Algorithms · Presentation Skills · Python · Programming · Competitive Programming · Java · OOP · Data Structures · Problem Solving · HTML · Team Leadership</div>
-                </div>
+
                 <div class="cv-entry">
                     <h3>Fairfield University</h3>
-                    <div class="date">Feb 2021 - Aug 2021</div>
-                    <div class="details">Visiting Student · Fairfield, Connecticut</div>
-                    <div class="description">Coursework: Discrete Mathematics (A), Foundations of Computing (A)</div>
-                    <div class="cv-skills">Skills: Programming · Mathematics</div>
+                    <div class="date">Feb 2021 – Aug 2021</div>
+                    <div class="details">Visiting Student · Fairfield, CT</div>
+                    <div class="description">Discrete Mathematics (A), Foundations of Computing (A).</div>
                 </div>
+
                 <div class="cv-entry">
-                    <h3>Jonathan Law High School</h3>
-                    <div class="date">Aug 2020 - Jun 2021</div>
-                    <div class="details">High School Diploma · Milford, Connecticut</div>
-                    <div class="description">Grade: Freshman · GPA: 4.0 · Activities: Key Club</div>
-                    <div class="description">Coursework: Introduction to Computer Science, 3D Modeling and Animation, Honors Chemistry and the Earth System, Honors Biology</div>
-                    <div class="cv-skills">Skills: HTML · JavaScript · CSS</div>
+                    <h3>Westhill High School</h3>
+                    <div class="date">Aug 2021 – Jun 2024</div>
+                    <div class="details">High School Diploma · Stamford, CT</div>
+                    <div class="description">GPA: 4.27 · SAT: 1520 · Competitive Coding Team, Math Team.</div>
                 </div>
             </div>
 
-            <!-- Experience Section (Updated) -->
+            <!-- Experience -->
             <div class="cv-section">
                 <h2>Experience</h2>
+
                 <div class="cv-entry">
-                    <div class="strong">IT Manager</div><div class="span">, The Daily Orange</div>
-                    <div class="date">Jan 2025 - Present</div>
-                    <div class="details">Syracuse, New York, United States · On-site</div>
+                    <h3>Software Developer — Syracuse University OSPO</h3>
+                    <div class="date">Apr 2025 – Present</div>
+                    <div class="details">Syracuse, NY</div>
                     <div class="description">
                         <ul>
-                            <li>Front-end and back-end web development for the online newspaper, attracting over 25,000 monthly visitors.</li>
-                            <li>Implemented security measures to protect the website from high-volume cyberattacks, including DoS and DDoS.</li>
+                            <li>Built an LLM-powered pipeline to match, parse, and summarize 1,000+ preprints from arXiv, bioRxiv, and SSRN.</li>
+                            <li>Automated metadata extraction and section-level tokenization using GROBID and spaCy for downstream similarity scoring and topic alerts.</li>
+                            <li>Developed Python batch scripts for querying, parsing, and structured outputs.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: HTML · CSS · Docker · Network Security</div>
+                    <div class="cv-skills">Skills: Python · NLP · GROBID · spaCy · Transformers · Data Engineering</div>
                 </div>
+
                 <div class="cv-entry">
-                    <div class="strong">Engineering Possibilities Summit</div><div class="span">, Goldman Sachs</div>
-                    <div class="date">Dec 2024 - Present</div>
+                    <h3>IT Manager — The Daily Orange</h3>
+                    <div class="date">Jan 2025 – Present</div>
+                    <div class="details">Syracuse, NY</div>
+                    <div class="description">
+                        <ul>
+                            <li>Full‑stack development for the online newspaper serving 25,000+ monthly visitors.</li>
+                            <li>Launched custom sites on a bi‑weekly cadence, increasing traffic by ~20% and ad revenue by ~15%.</li>
+                            <li>Implemented security measures against high‑volume attacks, including DoS/DDoS.</li>
+                        </ul>
+                    </div>
+                    <div class="cv-skills">Skills: JavaScript · Python · React · Docker · Web Security</div>
+                </div>
+
+                <div class="cv-entry">
+                    <h3>Modeling & Analysis in Measure Theory — Researcher, Polymath Jr</h3>
+                    <div class="date">Jun 2024 – Present</div>
                     <div class="details">Remote</div>
                     <div class="description">
                         <ul>
-                            <li>Selected for the year-long Goldman Sachs 2025 Engineering Possibilities Summit.</li>
-                            <li>Engaged in workshops, mentorship, technical sessions, and networking with industry professionals.</li>
-                            <li>Developed skills in problem-solving, collaboration, leadership, engineering, and financial analysis.</li>
+                            <li>Studying Lipschitz graphs and rectifiability; applied spectral methods and GNNs to analyze local structure under Hausdorff measures.</li>
+                            <li>Optimized metric embeddings to reduce memory usage and scale experiments.</li>
+                            <li>Presented at the Joint Mathematics Meetings (Seattle), Jan 8, 2025.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: Business Analysis · Financial Analysis</div>
+                    <div class="cv-skills">Skills: Java · Python · Real Analysis · Spectral Methods · GNNs · LaTeX</div>
                 </div>
+
                 <div class="cv-entry">
-                    <div class="strong">Modeling and Analysis in Measure Theory Researcher</div><div class="span">, Polymath Jr</div>
-                    <div class="date">Jun 2024 - Present</div>
+                    <h3>Combinatorics & Graph Theory — Researcher, Fairfield University</h3>
+                    <div class="date">Jun 2024 – Present</div>
+                    <div class="details">Fairfield, CT</div>
+                    <div class="description">
+                        <ul>
+                            <li>Anti‑van der Waerden numbers on Lollipop, Barbell, and Spider graphs (with Prof. Zhanar Berikkyzy).</li>
+                            <li>Java backtracking + ML (decision trees, clustering) to prune state space; ~45% reduction in runtime.</li>
+                            <li>Preparing manuscript for 2025 submission.</li>
+                        </ul>
+                    </div>
+                    <div class="cv-skills">Skills: Java · Graph Theory · Backtracking · Machine Learning · LaTeX</div>
+                </div>
+
+                <div class="cv-entry">
+                    <h3>Sequence Analysis — Researcher, Polymath Jr</h3>
+                    <div class="date">Jun 2021 – Aug 2021</div>
                     <div class="details">Remote</div>
                     <div class="description">
                         <ul>
-                            <li>Researched characterization of rectifiable measures carried by Lipschitz graphs with Professor Lisa Naples.</li>
-                            <li>Developed Java programs to check Lipschitz conditions.</li>
-                            <li>Presented at Joint Math Meetings in Seattle on January 8, 2025, and submitting paper for publication.</li>
+                            <li>Explored lexicographically least square‑free words with given prefixes.</li>
+                            <li>Wrote Python with suffix arrays and BK‑trees to generate strings up to 300k characters.</li>
+                            <li>Acknowledged in publication: <a href="https://arxiv.org/abs/2210.00508" class="link" target="_blank" rel="noopener">arxiv.org/abs/2210.00508</a>.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: Java · Problem Solving · Microsoft Office · LaTeX · Research Skills · Algorithms · Real Analysis · Team Leadership · Presentation Skills · Mathematics · Programming</div>
+                    <div class="cv-skills">Skills: Python · Algorithms · Suffix Arrays · BK‑Trees · LaTeX</div>
                 </div>
+
                 <div class="cv-entry">
-                    <div class="strong">Combinatorial Graph Theory Researcher</div><div class="span">, Fairfield University</div>
-                    <div class="date">Jun 2024 - Present</div>
-                    <div class="details">Fairfield, Connecticut, United States · On-site</div>
+                    <h3>Teaching Assistant — Westhill High School</h3>
+                    <div class="date">Aug 2023 – Jun 2024</div>
+                    <div class="details">Stamford, CT</div>
                     <div class="description">
                         <ul>
-                            <li>Researched Anti-van der Waerden number of Lollipop, Barbell, and Spider graphs with Professor Zhanar Berikkyzy.</li>
-                            <li>Created and optimized Java programs for graph colorings.</li>
-                            <li>Writing paper on Overleaf using LaTeX for publication in 2025.</li>
+                            <li>Data Structures & Algorithms TA: debugging help, created tests for 15+ assignments, and guest lectures on Huffman Coding and Linked Lists (25+ students).</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: Java · Problem Solving · LaTeX · Research Skills · Algorithms · Team Leadership · Mathematics · Graph Theory · Programming</div>
+                    <div class="cv-skills">Skills: Java · OOP · Data Structures · Teaching</div>
                 </div>
+
                 <div class="cv-entry">
-                    <div class="strong">Teaching Assistant</div><div class="span">, Westhill High School</div>
-                    <div class="date">Aug 2023 - Jun 2024</div>
-                    <div class="details">Stamford, Connecticut, United States · On-site</div>
+                    <h3>Instructor — Mathnasium</h3>
+                    <div class="date">Aug 2023 – Nov 2023</div>
+                    <div class="details">Ardsley, NY (Hybrid)</div>
                     <div class="description">
                         <ul>
-                            <li>Data Structures and Algorithms Teaching Assistant.</li>
-                            <li>Assisted in instruction, debugged student code, created test code for 15+ assignments, and led Huffman Coding and Linked Lists lectures to 25+ students.</li>
+                            <li>Tutored 15+ students across SAT prep and core mathematics.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: OOP · Java · Data Structures · Teaching · Algorithms · Team Leadership · Presentation Skills · Programming</div>
+                    <div class="cv-skills">Skills: Teaching · Mathematics</div>
                 </div>
+
                 <div class="cv-entry">
-                    <div class="strong">Teaching Assistant</div><div class="span">, Westhill High School</div>
-                    <div class="date">Aug 2023 - Dec 2023</div>
-                    <div class="details">Stamford, Connecticut, United States · On-site</div>
+                    <h3>Instructor — Code Ninjas</h3>
+                    <div class="date">Sep 2022 – Dec 2022</div>
+                    <div class="details">Stamford, CT</div>
                     <div class="description">
                         <ul>
-                            <li>AP Calculus BC Teaching Assistant.</li>
-                            <li>Graded tests, quizzes, assignments, and assisted students with course material.</li>
+                            <li>Taught coding at local schools and the center using JavaScript and block‑based tools.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: Teaching</div>
-                </div>
-                <div class="cv-entry">
-                    <div class="strong">Instructor</div><div class="span">, Mathnasium</div>
-                    <div class="date">Aug 2023 - Nov 2023</div>
-                    <div class="details">Ardsley, New York, United States · Hybrid</div>
-                    <div class="description">
-                        <ul>
-                            <li>Provided SAT prep and taught 15+ elementary to high school students.</li>
-                        </ul>
-                    </div>
-                    <div class="cv-skills">Skills: Teaching · Team Leadership · Mathematics</div>
-                </div>
-                <div class="cv-entry">
-                    <div class="strong">Instructor</div><div class="span">, Code Ninjas</div>
-                    <div class="date">Sep 2022 - Dec 2022</div>
-                    <div class="details">Stamford, Connecticut, United States · On-site</div>
-                    <div class="description">
-                        <ul>
-                            <li>Taught at local elementary schools and Code Ninjas center, helping students with coding assignments and projects using JavaScript and Block coding.</li>
-                        </ul>
-                    </div>
-                    <div class="cv-skills">Skills: Programming Concepts · JavaScript · Team Leadership · Presentation Skills · Programming</div>
-                </div>
-                <div class="cv-entry">
-                    <div class="strong">Sequence Analysis Researcher</div><div class="span">, Polymath Jr</div>
-                    <div class="date">Jun 2021 - Aug 2021</div>
-                    <div class="details">Remote</div>
-                    <div class="description">
-                        <ul>
-                            <li>Researched lexicographically least square-free words with given prefixes.</li>
-                            <li>Created Python programs to generate outputs up to 300,000 letters.</li>
-                            <li>Acknowledged in paper: <a href="https://arxiv.org/abs/2210.00508" class="link">arxiv.org/abs/2210.00508</a></li>
-                        </ul>
-                    </div>
-                    <div class="cv-skills">Skills: Python · Problem Solving · LaTeX · Research Skills · Algorithms · Programming</div>
+                    <div class="cv-skills">Skills: JavaScript · Programming Concepts · Instruction</div>
                 </div>
             </div>
 
-            <!-- Projects Section (Updated) -->
+            <!-- Projects -->
             <div class="cv-section">
                 <h2>Projects</h2>
+
+                <div class="cv-entry">
+                    <h3>Orange Grid</h3>
+                    <div class="date">Apr 2025 – Present</div>
+                    <div class="description">
+                        <ul>
+                            <li>Browser‑based puzzle game for <em>The Daily Orange</em>; integrates all‑time Syracuse athlete data.</li>
+                            <li>Automated logging/analytics for guess frequency; supports leaderboard and scoring design.</li>
+                        </ul>
+                    </div>
+                    <div class="cv-skills">Skills: JavaScript · Python · Data Processing · Analytics</div>
+                </div>
+
                 <div class="cv-entry">
                     <h3>CanSat Competition</h3>
-                    <div class="date">Nov 2024 - Present</div>
+                    <div class="date">Nov 2024 – Jul 2025</div>
                     <div class="description">
                         <ul>
-                            <li>Designed and implemented C++ software for real-time sensor data processing in a high-altitude aerospace mission.</li>
-                            <li>Translated mathematical models into efficient code for flight dynamics and data analysis.</li>
+                            <li>C++ software for real‑time sensor processing and flight dynamics analysis.</li>
+                            <li>Reduced variance to ~7% and cut compute time via multithreading/optimizations.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: C++ · Assembly Language · MATLAB · Mathematical Modeling</div>
+                    <div class="cv-skills">Skills: C++ · Multithreading · MATLAB · Numerical Methods</div>
                 </div>
+
                 <div class="cv-entry">
-                    <h3>Quantitative Trading Strategy</h3>
-                    <div class="date">Sep 2024 - Present</div>
+                    <h3>Quantitative Trading — LSTM Signals</h3>
+                    <div class="date">2024 – Present</div>
                     <div class="description">
                         <ul>
-                            <li>Developed and refined TensorFlow-based LSTM models to predict stock prices using innovative trading strategies.</li>
-                            <li>Created custom algorithms to improve prediction accuracy and profitability.</li>
+                            <li>Built TensorFlow LSTMs for short‑horizon forecasting with walk‑forward validation and risk controls.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: LSTM · TensorFlow · NumPy · SciPy</div>
+                    <div class="cv-skills">Skills: TensorFlow · Pandas · Backtesting · Time‑Series ML</div>
                 </div>
+
                 <div class="cv-entry">
                     <h3>MineSweeper</h3>
-                    <div class="date">Aug 2022 - Nov 2022</div>
+                    <div class="date">2023</div>
                     <div class="description">
                         <ul>
-                            <li>Created a Mine Sweeper game in Python using Tkinter GUI and Turtle.</li>
-                            <li>Features editable game size and number of mines with a polished interface, playable in a custom 1v1 mode against a computer.</li>
+                            <li>Python/Tkinter game with adjustable board size/mine count and a simple 1v1 mode vs. computer.</li>
                         </ul>
                     </div>
-                    <div class="cv-skills">Skills: Python</div>
+                    <div class="cv-skills">Skills: Python · Tkinter</div>
                 </div>
             </div>
 
-            <!-- Awards Section (Unchanged) -->
+            <!-- Awards -->
             <div class="cv-section">
                 <h2>Awards</h2>
                 <div class="cv-entry">
-                    <h3>Invest in Success Scholar</h3>
-                    <div class="date">Jan 2025</div>
-                    <div class="details">Issued by Syracuse University</div>
-                    <div class="description">Awarded to first-year students with a 3.75+ GPA in their first semester completing 15+ credits.</div>
+                    <h3>Putnam Competition — Top 44%</h3>
+                    <div class="date">2024</div>
                 </div>
                 <div class="cv-entry">
-                    <h3>AP Scholar with Distinction Award</h3>
-                    <div class="date">Jul 2023</div>
-                    <div class="details">Issued by College Board</div>
-                    <div class="description">Granted for an average score of 3.5+ on all AP Exams and 3+ on five or more exams.</div>
+                    <h3>Quinnipiac University Competitive Programming — 1st Place</h3>
+                    <div class="date">2024</div>
                 </div>
                 <div class="cv-entry">
-                    <h3>USA Computing Olympiad - Silver</h3>
-                    <div class="date">Mar 2022</div>
-                    <div class="description">Silver Qualifier in 2022 (Python) and 2023 (Java).</div>
+                    <h3>USA Computing Olympiad — Gold Division</h3>
+                    <div class="date">2022–2023</div>
                 </div>
             </div>
+
+            <!-- Technical Skills -->
+            <div class="cv-section">
+                <h2>Technical Skills</h2>
+                <div class="cv-entry">
+                    <div class="cv-skills">
+                        <strong>Languages:</strong> Java, Python, C++, JavaScript, MATLAB, Haskell, SQL<br>
+                        <strong>Tools:</strong> Git, Docker, React, OpenAI API, TensorFlow, Data Analytics
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
     <footer>
         <p>© 2025 Adil Oryspayev. All rights reserved.</p>
     </footer>
+
     <script>
         const toggleButton = document.querySelector('.theme-toggle');
         const body = document.body;
