@@ -11,7 +11,7 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Adil Oryspayev</a>
-            <button class="nav-toggle">☰</button>
+            <button class="nav-toggle" aria-label="Open navigation">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">About</a></li>
                 <li><a href="research.html">Research</a></li>
@@ -20,46 +20,69 @@
             </ul>
         </div>
     </nav>
+
     <button class="theme-toggle" aria-label="Toggle theme">🌞</button>
+
     <div class="container">
         <div class="section">
             <h2>Projects</h2>
+
+            <div class="entry">
+                <h3>Orange Grid</h3>
+                <div class="details">April 2025 – Present · Python, JavaScript</div>
+                <div class="description">
+                    <ul>
+                        <li>Built a browser‑based puzzle game inspired by NYT‑style grids for <em>The Daily Orange</em>.</li>
+                        <li>Logged and analyzed guesses to support frequency‑based scoring and future leaderboard features.</li>
+                        <li>Added data on all‑time Syracuse athletes, enabling game generation from player stats and history.</li>
+                    </ul>
+                </div>
+                <div class="skills">Skills: JavaScript · Python · Data Processing · Analytics</div>
+            </div>
+
             <div class="entry">
                 <h3>CanSat Competition</h3>
+                <div class="details">Nov 2024 – July 2025 · C++, MATLAB</div>
                 <div class="description">
                     <ul>
-                        <li>Designed and implemented C++ software for real-time sensor data processing in a high-altitude aerospace mission.</li>
-                        <li>Translated mathematical models into efficient code for flight dynamics and data analysis.</li>
+                        <li>Wrote C++ software for real‑time sensor data processing in a high‑altitude mission.</li>
+                        <li>Translated flight‑dynamics models into efficient code for onboard analysis.</li>
+                        <li>Reduced variance to 7% and cut compute time using multithreading and targeted optimizations.</li>
                     </ul>
                 </div>
-                <div class="skills">Skills: C++ · Assembly Language · MATLAB · Mathematical Modeling</div>
+                <div class="skills">Skills: C++ · Multithreading · MATLAB · Numerical Methods</div>
             </div>
+
             <div class="entry">
-                <h3>Quantitative Trading Strategy</h3>
+                <h3>Quantitative Trading — LSTM Signals</h3>
+                <div class="details">2024 – Present · Python, TensorFlow</div>
                 <div class="description">
                     <ul>
-                        <li>Developed and refined TensorFlow-based LSTM models to predict stock prices using innovative trading strategies.</li>
-                        <li>Created custom algorithms to improve prediction accuracy and profitability.</li>
+                        <li>Trained LSTM models on market data to test short‑horizon forecasting and signal design.</li>
+                        <li>Built backtests with feature screens, walk‑forward splits, and simple risk controls.</li>
                     </ul>
                 </div>
-                <div class="skills">Skills: LSTM · TensorFlow · NumPy · SciPy</div>
+                <div class="skills">Skills: TensorFlow · Pandas · Backtesting · Time‑Series ML</div>
             </div>
+
             <div class="entry">
                 <h3>MineSweeper</h3>
+                <div class="details">2023 · Python</div>
                 <div class="description">
                     <ul>
-                        <li>Created a Mine Sweeper game in Python using Tkinter GUI and Turtle.</li>
-                        <li>Features editable game size and number of mines with a polished interface.</li>
-                        <li>Playable in a custom 1v1 mode against a computer.</li>
+                        <li>Created a MineSweeper game with Tkinter; adjustable board size and mine count.</li>
+                        <li>Added a simple 1v1 mode against a computer player.</li>
                     </ul>
                 </div>
-                <div class="skills">Skills: Python</div>
+                <div class="skills">Skills: Python · Tkinter</div>
             </div>
         </div>
     </div>
+
     <footer>
         <p>© 2025 Adil Oryspayev. All rights reserved.</p>
     </footer>
+
     <script>
         const toggleButton = document.querySelector('.theme-toggle');
         const body = document.body;
