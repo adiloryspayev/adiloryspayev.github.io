@@ -2,15 +2,38 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilterableTags from '../components/FilterableTags';
 
-const projects = [
+// Define the shape of a Project object to satisfy TypeScript
+interface Project {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  links?: {
+    github?: string;
+    live?: string;
+  };
+  highlights: string[];
+  technical?: string;
+}
+
+const projects: Project[] = [
   {
     id: 'bilevel',
     title: 'Bi-level Optimization Platform',
     date: 'Oct 2025 – Present',
     description: 'Full-stack platform implementing the SACE framework via Streamlit and FastAPI.',
     tags: ['Python', 'Docker', 'FastAPI'],
-    links: { github: '#' }, // Note: No 'live' link here, which caused the error before
+    links: { github: '#' },
     highlights: ['Implemented SACE framework', 'Deployed to Linux VMs']
+  },
+  {
+    id: 'cansat',
+    title: 'CanSat Aerospace Prototype',
+    date: 'Nov 2024 – July 2025',
+    description: 'Engineered real-time embedded C++ firmware for a satellite probe.',
+    tags: ['C++', 'MATLAB', 'Embedded Systems'],
+    highlights: ['Reduced telemetry latency by 60%', 'RTOS implementation']
   }
 ];
 ---
@@ -22,6 +45,7 @@ const projects = [
     <FilterableTags 
       items={projects.map(p => ({ 
         ...p, 
+        // TypeScript now knows links is optional and has optional properties
         url: p.links?.live || p.links?.github || '#' 
       }))} 
       type="projects" 
@@ -35,7 +59,6 @@ const projects = [
            <p class="text-gray-400 text-sm mb-4">{project.date}</p>
            <p class="text-gray-300 mb-4">{project.description}</p>
            
-           {/* FIX: Removed 'key' prop from non-React element */}
            <div class="flex flex-wrap gap-2 mt-4">
              {project.tags.map(tag => (
                <span class="px-2 py-1 bg-gray-900 text-xs font-mono rounded text-su-orange-light">
