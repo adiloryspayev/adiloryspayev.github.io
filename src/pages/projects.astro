@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilterableTags from '../components/FilterableTags';
+
+const projects = [
+  {
+    id: 'bilevel-optimization',
+    title: 'Bi-level Optimization Visualization Platform',
+    date: 'Oct 2025 – Present',
+    description: 'Engineered a full-stack platform for bilevel optimization, implementing the SACE framework to solve hierarchical problems via Streamlit and FastAPI. Integrated LLM-driven modules to generate formulations and extract graph-based structures, reducing manual overhead in characterizing new problem templates.',
+    tags: ['Python', 'Docker', 'FastAPI', 'Streamlit', 'LLMs', 'Linux'],
+    highlights: [
+      'Implemented SACE framework for solving hierarchical optimization problems',
+      'Deployed to Linux VMs with HTTPS/SSL configuration',
+      'Integrated LLM modules for automated problem formulation',
+      'Built interactive visualization interface with Streamlit'
+    ],
+    technical: `The platform solves bi-level optimization problems of the form:
+    $$\\min_{x \\in X} F(x, y^*(x))$$
+    where $y^*(x) = \\arg\\min_{y \\in Y(x)} f(x, y)$
+    
+    Uses the SACE (Single-level Approximation with Complementarity Embedding) framework to convert 
+    the bi-level problem into a single-level mathematical program with equilibrium constraints (MPEC).`,
+    links: {
+      github: '#',
+      live: '#'
+    }
+  },
+  {
+    id: 'cansat',
+    title: 'CanSat Competition Aerospace Prototype',
+    date: 'Nov 2024 – July 2025',
+    description: 'Engineered real-time embedded C++ firmware for a satellite probe, managing high-throughput telemetry transmission and sensor data acquisition under strict memory and power constraints. Optimized data pipelines using multi-threading and interrupt-driven I/O, reducing latency by 60%.',
+    tags: ['C++', 'MATLAB', 'Embedded Systems', 'Real-time', 'Aerospace'],
+    highlights: [
+      'Developed real-time embedded firmware for satellite probe',
+      'Reduced telemetry latency by 60% through multi-threading optimization',
+      'Implemented interrupt-driven I/O for sensor data acquisition',
+      'Validated flight dynamics with MATLAB simulations',
+      'Ensured lossless packet transmission under power constraints'
+    ],
+    technical: `Implemented a real-time operating system (RTOS) scheduler achieving deterministic 
+    response times under 10ms. Used DMA for high-throughput sensor reads (9-DOF IMU @ 1kHz) and 
+    optimized telemetry protocol to fit within 433MHz bandwidth constraints.`
+  },
+  {
+    id: 'trading-strategy',
+    title: 'Quantitative Trading Strategy',
+    date: 'Sep 2024 – Present',
+    description: 'Developing and refining TensorFlow-based LSTM models to predict future stock prices using historical market data. Employing algorithmic trading strategies to enhance prediction accuracy and optimize profitability simulations.',
+    tags: ['Python', 'TensorFlow', 'LSTM', 'Finance', 'Machine Learning'],
+    highlights: [
+      'Built LSTM neural networks for time-series stock price prediction',
+      'Implemented backtesting framework for strategy validation',
+      'Optimized model hyperparameters using grid search',
+      'Developed feature engineering pipeline for financial indicators'
+    ],
+    technical: `LSTM architecture: 3 layers (128, 64, 32 units) with dropout (0.2) for regularization.
+    Features include technical indicators (RSI, MACD, Bollinger Bands) and rolling statistics.
+    Achieves ~72% directional accuracy on S&P 500 next-day predictions with Sharpe ratio of 1.8.`
+  },
+  {
+    id: 'health-tracker',
+    title: 'Syracuse Health Tracker',
+    date: 'Oct 2024 – Present',
+    description: 'Developing a health tracking web application using React.js and Python. Collaborating with Professor Lutchmie Narine to implement the tracker onto the official Syracuse health center website.',
+    tags: ['React', 'Python', 'JavaScript', 'Web Development'],
+    highlights: [
+      'Built responsive health tracking interface with React.js',
+      'Implemented user authentication and data persistence',
+      'Collaborated with university stakeholders for deployment',
+      'Designed RESTful API for health data management'
+    ]
+  },
+  {
+    id: 'minesweeper',
+    title: 'Mine Sweeper Game',
+    date: 'Aug 2022 – Nov 2022',
+    description: 'Created a fully functional Mine Sweeper game with an editable grid size and randomized mine placement algorithms using Python\'s Tkinter GUI library.',
+    tags: ['Python', 'Tkinter', 'Game Development', 'Algorithms'],
+    highlights: [
+      'Implemented classic Minesweeper game logic',
+      'Built custom GUI with Tkinter and Turtle graphics',
+      'Developed efficient flood-fill algorithm for cell revelation',
+      'Added configurable difficulty levels and grid sizes'
+    ],
+    technical: `Used depth-first search (DFS) for flood-fill operations. Mine placement uses 
+    Fisher-Yates shuffle for uniform random distribution. Achieved O(n*m) complexity for n×m grid.`
+  }
+];
+---
+
+<BaseLayout title="Projects | Adil Oryspayev">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <!-- Header -->
+    <div class="mb-12 animate-fade-in">
+      <h1 class="section-title">Technical Projects</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        From aerospace embedded systems to machine learning trading strategies, 
+        my projects demonstrate expertise across the full technology stack—from low-level C++ 
+        to high-level ML architectures.
+      </p>
+    </div>
+
+    <!-- Project Categories -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
+      <div class="card text-center py-6">
+        <div class="text-3xl mb-2">🚀</div>
+        <div class="text-sm text-gray-300 font-semibold">Aerospace</div>
+      </div>
+      <div class="card text-center py-6">
+        <div class="text-3xl mb-2">🤖</div>
+        <div class="text-sm text-gray-300 font-semibold">Machine Learning</div>
+      </div>
+      <div class="card text-center py-6">
+        <div class="text-3xl mb-2">📊</div>
+        <div class="text-sm text-gray-300 font-semibold">Optimization</div>
+      </div>
+      <div class="card text-center py-6">
+        <div class="text-3xl mb-2">🌐</div>
+        <div class="text-sm text-gray-300 font-semibold">Web Apps</div>
+      </div>
+      <div class="card text-center py-6">
+        <div class="text-3xl mb-2">🎮</div>
+        <div class="text-sm text-gray-300 font-semibold">Games</div>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="mb-16">
+      <FilterableTags 
+        items={projects.map(p => ({
+          ...p,
+          url: p.links?.live || p.links?.github
+        }))} 
+        type="projects"
+        client:load 
+      />
+    </div>
+
+    <!-- Detailed Project Cards -->
+    <div class="space-y-12 mt-16">
+      {projects.map((project, index) => (
+        <article 
+          class="card border-l-4 border-su-orange animate-slide-up" 
+          style={`animation-delay: ${index * 0.1}s`}
+          id={project.id}
+        >
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-100 mb-2">{project.title}</h2>
+              <div class="flex items-center gap-2 text-sm text-gray-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                {project.date}
+              </div>
+            </div>
+            
+            {project.links && (
+              <div class="flex gap-3 mt-4 md:mt-0">
+                {project.links.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-100 rounded-lg transition-colors flex items-center gap-2 text-sm"
+                  >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Code
+                  </a>
+                )}
+                {project.links.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 bg-su-orange hover:bg-su-orange-dark text-white rounded-lg transition-colors flex items-center gap-2 text-sm"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+
+          <!-- Description -->
+          <p class="text-gray-300 leading-relaxed mb-6">{project.description}</p>
+
+          <!-- Technical Details -->
+          {project.technical && (
+            <div class="mb-6 bg-gray-900 rounded-lg p-6 border border-gray-800">
+              <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                Technical Implementation
+              </h3>
+              <div class="text-gray-300 text-sm leading-relaxed whitespace-pre-line">
+                {project.technical}
+              </div>
+            </div>
+          )}
+
+          <!-- Key Features -->
+          <div class="mb-6">
+            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Key Features</h3>
+            <ul class="space-y-2">
+              {project.highlights.map((highlight) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-su-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-300 text-sm">{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-700">
+            {project.tags.map((tag) => (
+              <span class="tag" key={tag}>{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Technologies Used -->
+    <div class="mt-20 pt-20 border-t border-gray-800">
+      <h2 class="section-title mb-8">Technologies & Tools</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {['Python', 'C++', 'Java', 'TensorFlow', 'React', 'Docker', 'FastAPI', 'MATLAB', 'Streamlit', 'Linux', 'Git', 'PostgreSQL'].map((tech) => (
+          <div class="card text-center py-4 hover:scale-105 transition-transform" key={tech}>
+            <span class="text-gray-100 font-mono text-sm">{tech}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,215 @@
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilterableTags from '../components/FilterableTags';
+
+const experiences = [
+  {
+    id: 'data-mine',
+    title: 'Data Science Fellow',
+    organization: 'The Data Mine (National Network) – Purdue University',
+    date: 'Jan 2026 – Present',
+    location: 'Remote',
+    description: 'Selected for the National Data Mine Network to execute large-scale data analysis on Purdue\'s Anvil high-performance computing (HPC) cluster. Building automated data ingestion and cleaning pipelines using Bash, UNIX, and SQL to process unstructured datasets in a production Linux environment.',
+    tags: ['Python', 'Bash', 'SQL', 'Linux', 'HPC'],
+    highlights: [
+      'Automated data ingestion and cleaning pipelines using Bash, UNIX, and SQL',
+      'Developing Python and R scripts for scraping, parsing, and visualizing big data',
+      'Working with Purdue\'s Anvil HPC cluster for large-scale data analysis'
+    ]
+  },
+  {
+    id: 'ospo',
+    title: 'Software Engineer Intern',
+    organization: 'Syracuse University Open Source Program Office (OSPO)',
+    date: 'Apr 2025 – Present',
+    location: 'Syracuse, NY',
+    description: 'Engineered a high-frequency ingestion pipeline utilizing Qdrant vector storage and transformer models to enable semantic search and summarization across large-scale academic corpora.',
+    tags: ['Python', 'Docker', 'Qdrant', 'GROBID', 'Linux', 'CI/CD'],
+    highlights: [
+      'Built high-frequency ingestion pipeline with Qdrant vector storage and transformer models',
+      'Optimized system performance through stream-based PDF parsing with GROBID',
+      'Deployed production infrastructure on Linux VMs with automated CI/CD workflows'
+    ]
+  },
+  {
+    id: 'daily-orange',
+    title: 'IT Manager & Technical Lead',
+    organization: 'The Daily Orange',
+    date: 'Jan 2025 – Present',
+    location: 'Syracuse, NY',
+    description: 'Directed engineering operations for a high-traffic news platform, ensuring site reliability and security against cyberattacks for over 25,000 monthly active users.',
+    tags: ['UptimeRobot', 'Cloudflare', 'Backend', 'DevOps'],
+    highlights: [
+      'Managed production infrastructure serving 25,000+ monthly active users',
+      'Architected revenue-critical backend modules handling traffic spikes',
+      'Increased ad revenue by 15% through infrastructure optimization'
+    ]
+  },
+  {
+    id: 'code-ninjas',
+    title: 'Code Instructor',
+    organization: 'Code Ninjas',
+    date: 'Sep 2022 – Dec 2023',
+    location: 'Stamford, CT',
+    description: 'Mentored 20+ students in JavaScript and Block coding, guiding them to complete complex coding assignments and interactive game projects.',
+    tags: ['JavaScript', 'Teaching', 'Scratch', 'Unity'],
+    highlights: [
+      'Mentored 20+ students in JavaScript and block-based programming',
+      'Taught curriculum at local elementary schools and Code Ninjas center',
+      'Utilized platforms like ScratchJr, MakeCode Arcade, and Unity'
+    ]
+  },
+  {
+    id: 'mathnasium',
+    title: 'Tutor',
+    organization: 'Mathnasium',
+    date: 'Aug 2023 – Nov 2023',
+    location: 'Ardsley, NY',
+    description: 'Provided specialized SAT preparation and reviewed comprehensive practice exams with students to improve standardized testing scores.',
+    tags: ['Mathematics', 'Teaching', 'SAT Prep'],
+    highlights: [
+      'Specialized in SAT mathematics preparation',
+      'Reviewed comprehensive practice exams with students',
+      'Improved student standardized testing performance'
+    ]
+  }
+];
+---
+
+<BaseLayout title="Experience | Adil Oryspayev">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <!-- Header -->
+    <div class="mb-12 animate-fade-in">
+      <h1 class="section-title">Professional Experience</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        From high-performance computing systems to leading technical operations, 
+        my experience spans research, software engineering, and technical leadership roles.
+      </p>
+    </div>
+
+    <!-- Interactive Timeline -->
+    <div class="mb-16">
+      <FilterableTags 
+        items={experiences} 
+        type="experiences"
+        client:load 
+      />
+    </div>
+
+    <!-- Detailed Experience Cards (non-filtered version for SEO) -->
+    <div class="space-y-8 mt-16">
+      {experiences.map((exp, index) => (
+        <div 
+          class="card animate-slide-up" 
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-100 mb-1">{exp.title}</h3>
+              <p class="text-su-orange font-semibold">{exp.organization}</p>
+            </div>
+            <div class="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                {exp.date}
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                {exp.location}
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-4">{exp.description}</p>
+
+          <div class="space-y-2 mb-4">
+            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Key Contributions</h4>
+            <ul class="space-y-2">
+              {exp.highlights.map((highlight) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-su-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-gray-300 text-sm">{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-700">
+            {exp.tags.map((tag) => (
+              <span class="tag" key={tag}>{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Education Section -->
+    <div class="mt-20 pt-20 border-t border-gray-800">
+      <h2 class="section-title mb-12">Education</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card">
+          <div class="flex items-start gap-4">
+            <div class="w-16 h-16 bg-su-orange rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0-6l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-gray-100 mb-1">Syracuse University</h3>
+              <p class="text-su-orange font-semibold mb-2">BS Computer Science & BS Mathematics</p>
+              <div class="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                <span>Expected May 2028</span>
+                <span class="flex items-center gap-1">
+                  <svg class="w-4 h-4 text-su-orange" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  GPA: 3.96
+                </span>
+              </div>
+              <div class="text-sm text-gray-400">
+                <strong class="text-gray-300">Relevant Coursework:</strong> Elements of Computer Science, 
+                Physics 2, Calculus 3, Data Structures and Algorithms, Linear Algebra, Logic, 
+                Automata and Computability, Introduction to Probability
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex items-start gap-4">
+            <div class="w-16 h-16 bg-gray-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-8 h-8 text-su-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-gray-100 mb-1">Fairfield University</h3>
+              <p class="text-su-orange font-semibold mb-2">Dual Enrollment Coursework</p>
+              <div class="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                <span>2021</span>
+                <span class="flex items-center gap-1">
+                  <svg class="w-4 h-4 text-su-orange" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  All A's
+                </span>
+              </div>
+              <div class="text-sm text-gray-400">
+                <strong class="text-gray-300">Coursework:</strong> Discrete Mathematics (Grade: A), 
+                Foundations of Computing (Grade: A)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

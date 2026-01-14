@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilterableTags from '../components/FilterableTags';
+
+const research = [
+  {
+    id: 'measure-theory',
+    title: 'Geometric Measure Theory: Rectifiability via Dyadic Square Structures',
+    organization: 'Polymath Jr',
+    date: 'Jun 2024 – Present',
+    status: 'Under Review',
+    venue: 'Rose-Hulman Undergraduate Mathematics Journal',
+    description: 'Co-authored research manuscript investigating computational criteria for rectifiability in geometric measure theory. Presented findings at the 2025 Joint Mathematics Meetings.',
+    tags: ['Measure Theory', 'Python', 'LaTeX', 'Mathematics'],
+    highlights: [
+      'Formulated computational criterion for rectifiability by discretizing continuous pointwise cone conditions',
+      'Converted uncountable verification sets into finite algorithmic checks using dyadic square structures',
+      'Derived quantitative "square-based doubling inequality" for propagating density bounds across scales',
+      'Established rigorous convergence rates for detecting Lipschitz graph structures'
+    ],
+    abstract: `This research addresses a fundamental problem in geometric measure theory: determining when 
+    a set can be approximated by smooth structures. We discretize continuous pointwise cone conditions into 
+    dyadic square structures, enabling computational verification. Our key contribution is a square-based 
+    doubling inequality that establishes convergence rates for density propagation.`,
+    mathContent: `
+      <p class="mb-4">We establish that for a Radon measure μ on $\\mathbb{R}^n$, a set $E \\subseteq \\mathbb{R}^n$ 
+      is $n$-rectifiable if there exists a family of dyadic squares $\\{Q_k\\}$ such that:</p>
+      
+      <div class="bg-gray-900 p-6 rounded-lg mb-4 overflow-x-auto">
+        $$\\sum_{k} \\frac{\\mu(Q_k \\cap E)}{\\ell(Q_k)^n} \\leq C \\mu(E)$$
+      </div>
+      
+      <p class="mb-4">where $\\ell(Q_k)$ denotes the side length of square $Q_k$ and $C$ is a universal constant.</p>
+    `
+  },
+  {
+    id: 'graph-theory',
+    title: 'Anti-van der Waerden Numbers on Complex Graph Topologies',
+    organization: 'Fairfield University',
+    date: 'Jun 2024 – Present',
+    status: 'In Progress',
+    description: 'Co-authored research analyzing Anti-van der Waerden numbers on complex graph topologies, addressing variations of the NP-Hard 3-coloring problem.',
+    tags: ['Graph Theory', 'Java', 'Algorithms', 'Combinatorics'],
+    highlights: [
+      'Developed Java backtracking algorithms to enumerate coloring states',
+      'Derived rigorous bounds reducing verification search space from exponential to linear complexity',
+      'Analyzed combinatorial structures on various graph classes including paths, cycles, and trees',
+      'Applied computational methods to verify theoretical conjectures'
+    ],
+    abstract: `We investigate Anti-van der Waerden numbers—the minimum number of colors needed to color 
+    the edges of a graph such that no color class contains an arithmetic progression of a given length. 
+    Our work extends classical Ramsey theory results to structured graph classes.`,
+    mathContent: `
+      <p class="mb-4">For a graph $G = (V, E)$, we define the Anti-van der Waerden number $\\text{aw}(G, k)$ 
+      as the minimum number of colors required to color $E$ such that no monochromatic arithmetic progression 
+      of length $k$ exists.</p>
+      
+      <div class="bg-gray-900 p-6 rounded-lg mb-4">
+        $$\\text{aw}(G, k) = \\min\\{r : \\exists \\text{ coloring } c: E \\to [r] \\text{ with no AP}_k\\}$$
+      </div>
+      
+      <p class="mb-4">Our backtracking algorithm achieves $O(n \\cdot r^{|E|})$ complexity with pruning heuristics.</p>
+    `
+  },
+  {
+    id: 'sequence-analysis',
+    title: 'Advanced Metric Data Structures for Sequence Analysis',
+    organization: 'Polymath Jr',
+    date: 'Jun 2021 – Aug 2021',
+    status: 'Published',
+    venue: 'arXiv:2210.00508',
+    description: 'Implemented advanced metric data structures including Suffix Arrays and BK-Trees to optimize query complexity for fuzzy string matching.',
+    tags: ['Python', 'Data Structures', 'Algorithms', 'String Matching'],
+    highlights: [
+      'Implemented Suffix Arrays achieving $O(n \\log n)$ construction time',
+      'Developed BK-Tree structure for efficient approximate string matching',
+      'Verified mathematical conjectures computationally',
+      'Published findings in arXiv preprint repository'
+    ],
+    abstract: `This work explores efficient data structures for approximate pattern matching in large string 
+    datasets. We implement and analyze Suffix Arrays and BK-Trees, demonstrating their effectiveness in 
+    solving sequence analysis problems with provable complexity bounds.`,
+    mathContent: `
+      <p class="mb-4">For a string $S$ of length $n$, we construct a suffix array in $O(n \\log n)$ time. 
+      The BK-Tree supports queries for all strings within edit distance $d$ in time:</p>
+      
+      <div class="bg-gray-900 p-6 rounded-lg mb-4">
+        $$T(d, m) = O(m \\cdot \\log |\\Sigma| + k)$$
+      </div>
+      
+      <p class="mb-4">where $m$ is the query length, $|\\Sigma|$ is the alphabet size, and $k$ is the output size.</p>
+    `
+  }
+];
+---
+
+<BaseLayout title="Research | Adil Oryspayev">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <!-- Header -->
+    <div class="mb-12 animate-fade-in">
+      <h1 class="section-title">Research Work</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        My research spans geometric measure theory, combinatorial graph theory, and computational mathematics. 
+        I focus on developing algorithmic approaches to theoretical problems and establishing rigorous convergence bounds.
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-su-orange mb-2">3</div>
+        <div class="text-sm text-gray-400">Research Projects</div>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-su-orange mb-2">1</div>
+        <div class="text-sm text-gray-400">Under Review</div>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-su-orange mb-2">1</div>
+        <div class="text-sm text-gray-400">Published</div>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-su-orange mb-2">2025</div>
+        <div class="text-sm text-gray-400">JMM Presentation</div>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="mb-16">
+      <FilterableTags 
+        items={research.map(r => ({
+          ...r,
+          title: r.title,
+          description: r.abstract
+        }))} 
+        type="research papers"
+        client:load 
+      />
+    </div>
+
+    <!-- Detailed Research Cards -->
+    <div class="space-y-12 mt-16">
+      {research.map((paper, index) => (
+        <article 
+          class="card border-l-4 border-su-orange animate-slide-up" 
+          style={`animation-delay: ${index * 0.15}s`}
+          id={paper.id}
+        >
+          <!-- Header -->
+          <div class="mb-6">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class={`px-3 py-1 rounded-full text-xs font-semibold ${
+                paper.status === 'Published' 
+                  ? 'bg-green-900 text-green-300 border border-green-700' 
+                  : paper.status === 'Under Review'
+                  ? 'bg-yellow-900 text-yellow-300 border border-yellow-700'
+                  : 'bg-blue-900 text-blue-300 border border-blue-700'
+              }`}>
+                {paper.status}
+              </span>
+              {paper.venue && (
+                <span class="text-sm text-gray-400 font-mono">{paper.venue}</span>
+              )}
+            </div>
+            
+            <h2 class="text-3xl font-bold text-gray-100 mb-2">{paper.title}</h2>
+            
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+                {paper.organization}
+              </span>
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                {paper.date}
+              </span>
+            </div>
+          </div>
+
+          <!-- Abstract -->
+          <div class="mb-6">
+            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Abstract</h3>
+            <p class="text-gray-300 leading-relaxed">{paper.abstract}</p>
+          </div>
+
+          <!-- Mathematical Content (if exists) -->
+          {paper.mathContent && (
+            <div class="mb-6 bg-gray-900 rounded-lg p-6 border border-gray-800">
+              <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Mathematical Framework</h3>
+              <div class="prose prose-invert max-w-none" set:html={paper.mathContent} />
+            </div>
+          )}
+
+          <!-- Key Contributions -->
+          <div class="mb-6">
+            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Key Contributions</h3>
+            <ul class="space-y-2">
+              {paper.highlights.map((highlight) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-su-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-gray-300 text-sm">{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-700">
+            {paper.tags.map((tag) => (
+              <span class="tag" key={tag}>{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Research Interests -->
+    <div class="mt-20 pt-20 border-t border-gray-800">
+      <h2 class="section-title mb-8">Research Interests</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card">
+          <h3 class="text-lg font-bold text-gray-100 mb-3">Geometric Measure Theory</h3>
+          <p class="text-gray-400 text-sm">
+            Rectifiability, density theorems, and computational approaches to geometric analysis
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-bold text-gray-100 mb-3">Combinatorial Optimization</h3>
+          <p class="text-gray-400 text-sm">
+            Graph coloring, NP-hard problems, and algorithmic complexity bounds
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-bold text-gray-100 mb-3">Computational Mathematics</h3>
+          <p class="text-gray-400 text-sm">
+            Algorithm design, data structures, and computational verification of conjectures
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

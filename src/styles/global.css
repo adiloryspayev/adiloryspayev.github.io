@@ -1,0 +1,212 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* KaTeX CSS for LaTeX rendering */
+@import 'katex/dist/katex.min.css';
+
+@layer base {
+  :root {
+    --su-orange: #F76900;
+    --su-orange-dark: #D55D00;
+    --su-orange-light: #FF8529;
+  }
+
+  * {
+    @apply border-gray-800;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100;
+    @apply min-h-screen antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-100;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  a {
+    @apply text-su-orange hover:text-su-orange-light transition-colors duration-200;
+  }
+
+  code {
+    @apply px-1.5 py-0.5 rounded bg-gray-800 text-su-orange-light font-mono text-sm;
+  }
+
+  pre {
+    @apply rounded-lg p-4 overflow-x-auto bg-gray-900 border border-gray-700;
+  }
+
+  pre code {
+    @apply p-0 bg-transparent;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-su-orange hover:bg-su-orange-dark text-white font-semibold rounded-lg;
+    @apply transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply focus:outline-none focus:ring-2 focus:ring-su-orange focus:ring-offset-2 focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-100 font-semibold rounded-lg;
+    @apply transition-all duration-200 border border-gray-700 hover:border-su-orange;
+    @apply focus:outline-none focus:ring-2 focus:ring-gray-600;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-xl p-6 border border-gray-700;
+    @apply hover:border-su-orange transition-all duration-300;
+    @apply shadow-lg hover:shadow-2xl hover:shadow-su-orange/10;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 bg-gray-800 text-su-orange-light text-xs font-mono;
+    @apply rounded-full border border-gray-700 hover:border-su-orange;
+    @apply transition-all duration-200 cursor-pointer;
+  }
+
+  .tag-active {
+    @apply bg-su-orange text-white border-su-orange;
+  }
+
+  .prose {
+    @apply text-gray-300 leading-relaxed;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside mb-4 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside mb-4 space-y-2;
+  }
+
+  .prose strong {
+    @apply text-gray-100 font-semibold;
+  }
+
+  .prose em {
+    @apply text-gray-300 italic;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-8;
+    @apply bg-gradient-to-r from-su-orange to-su-orange-light bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl;
+    background: linear-gradient(135deg, var(--su-orange), var(--su-orange-light));
+    @apply -z-10 blur-sm opacity-0 transition-opacity duration-300;
+  }
+
+  .gradient-border:hover::before {
+    @apply opacity-100;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-su-orange;
+}
+
+/* KaTeX customization for dark mode */
+.katex {
+  @apply text-gray-100;
+}
+
+.katex .mord,
+.katex .mrel,
+.katex .mop {
+  @apply text-gray-100;
+}
+
+.katex .mbin {
+  @apply text-su-orange-light;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Reading time indicator */
+.reading-time {
+  @apply text-sm text-gray-500 font-mono;
+}
+
+.reading-time::before {
+  content: '📖 ';
+}
+
+/* Skill bar animation */
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+}
+
+.skill-bar-fill {
+  animation: fillBar 1.5s ease-out;
+}
