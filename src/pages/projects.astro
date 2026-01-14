@@ -4,49 +4,47 @@ import FilterableTags from '../components/FilterableTags';
 
 const projects = [
   {
-    id: 'bilevel-optimization',
-    title: 'Bi-level Optimization Visualization Platform',
+    id: 'bilevel',
+    title: 'Bi-level Optimization Platform',
     date: 'Oct 2025 – Present',
-    description: 'Engineered a full-stack platform for bilevel optimization, implementing the SACE framework to solve hierarchical problems via Streamlit and FastAPI. Integrated LLM-driven modules to generate formulations.',
-    tags: ['Python', 'Docker', 'FastAPI', 'Streamlit', 'LLMs', 'Linux'],
-    highlights: [
-      'Implemented SACE framework for solving hierarchical optimization problems',
-      'Deployed to Linux VMs with HTTPS/SSL configuration',
-      'Integrated LLM modules for automated problem formulation'
-    ],
-    technical: `The platform solves bi-level optimization problems. Uses the SACE framework to convert the bi-level problem into a single-level mathematical program.`,
-    links: { github: '#' }
-  },
-  // ... (Add other projects here, ensuring NO [source] tags)
+    description: 'Full-stack platform implementing the SACE framework via Streamlit and FastAPI.',
+    tags: ['Python', 'Docker', 'FastAPI'],
+    links: { github: '#' }, // Note: No 'live' link here, which caused the error before
+    highlights: ['Implemented SACE framework', 'Deployed to Linux VMs']
+  }
 ];
 ---
 
 <BaseLayout title="Projects | Adil Oryspayev">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="mb-12 animate-fade-in">
-      <h1 class="section-title">Technical Projects</h1>
-      <p class="text-xl text-gray-300 max-w-3xl">
-        From aerospace embedded systems to machine learning trading strategies, my projects demonstrate expertise across the full technology stack.
-      </p>
-    </div>
+    <h1 class="text-4xl font-bold mb-12">Projects</h1>
+    
+    <FilterableTags 
+      items={projects.map(p => ({ 
+        ...p, 
+        url: p.links?.live || p.links?.github || '#' 
+      }))} 
+      type="projects" 
+      client:load 
+    />
 
-    <div class="mb-16">
-      <FilterableTags 
-        items={projects.map(p => ({ ...p, url: p.links?.live || p.links?.github }))} 
-        type="projects" 
-        client:load 
-      />
-    </div>
-
-    <div class="mt-20 pt-20 border-t border-gray-800">
-      <h2 class="section-title mb-8">Technologies & Tools</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {['Python', 'C++', 'Java', 'TensorFlow', 'React', 'Docker', 'FastAPI', 'MATLAB', 'Streamlit', 'Linux', 'Git', 'PostgreSQL'].map((tech) => (
-          <div class="card text-center py-4 hover:scale-105 transition-transform">
-            <span class="text-gray-100 font-mono text-sm">{tech}</span>
-          </div>
-        ))}
-      </div>
+    <div class="grid gap-8 mt-12">
+      {projects.map((project) => (
+        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+           <h2 class="text-2xl font-bold text-gray-100">{project.title}</h2>
+           <p class="text-gray-400 text-sm mb-4">{project.date}</p>
+           <p class="text-gray-300 mb-4">{project.description}</p>
+           
+           {/* FIX: Removed 'key' prop from non-React element */}
+           <div class="flex flex-wrap gap-2 mt-4">
+             {project.tags.map(tag => (
+               <span class="px-2 py-1 bg-gray-900 text-xs font-mono rounded text-su-orange-light">
+                 {tag}
+               </span>
+             ))}
+           </div>
+        </div>
+      ))}
     </div>
   </div>
 </BaseLayout>
