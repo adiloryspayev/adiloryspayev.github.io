@@ -2,50 +2,76 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilterableTags from '../components/FilterableTags';
 
-// Define the shape of a Project object to satisfy TypeScript
 interface Project {
   id: string;
   title: string;
   date: string;
   description: string;
   tags: string[];
-  links?: {
-    github?: string;
-    live?: string;
-  };
+  links?: { github?: string; live?: string; };
   highlights: string[];
-  technical?: string;
 }
 
 const projects: Project[] = [
   {
     id: 'bilevel',
-    title: 'Bi-level Optimization Platform',
+    title: 'Bi-level Optimization Visualization Platform',
     date: 'Oct 2025 – Present',
-    description: 'Full-stack platform implementing the SACE framework via Streamlit and FastAPI.',
-    tags: ['Python', 'Docker', 'FastAPI'],
+    description: 'Engineered a full-stack platform for bilevel optimization, implementing the SACE framework to solve hierarchical problems via Streamlit and FastAPI.',
+    tags: ['Python', 'Docker', 'FastAPI', 'LLMs'],
     links: { github: '#' },
-    highlights: ['Implemented SACE framework', 'Deployed to Linux VMs']
+    highlights: [
+      'Deployed to Linux VMs with HTTPS/SSL',
+      'Integrated LLM-driven modules to generate formulations and extract graph-based structures'
+    ]
   },
   {
     id: 'cansat',
-    title: 'CanSat Aerospace Prototype',
+    title: 'CanSat Competition Aerospace Prototype',
     date: 'Nov 2024 – July 2025',
-    description: 'Engineered real-time embedded C++ firmware for a satellite probe.',
+    description: 'Engineered real-time embedded C++ firmware for a satellite probe, managing high-throughput telemetry transmission and sensor data acquisition.',
     tags: ['C++', 'MATLAB', 'Embedded Systems'],
-    highlights: ['Reduced telemetry latency by 60%', 'RTOS implementation']
+    highlights: [
+      'Optimized data pipelines using multi-threading and interrupt-driven I/O reducing latency by 60%',
+      'Validated flight dynamics via MATLAB simulations'
+    ]
+  },
+  {
+    id: 'quant-trading',
+    title: 'Quantitative Trading Strategy',
+    date: 'Sep 2024 – Present',
+    description: 'Developing and refining TensorFlow-based LSTM models to predict future stock prices using historical market data.',
+    tags: ['Python', 'TensorFlow', 'LSTM'],
+    highlights: [
+      'Employing algorithmic trading strategies to enhance prediction accuracy and optimize profitability simulations'
+    ]
+  },
+  {
+    id: 'health-tracker',
+    title: 'Syracuse Health Tracker',
+    date: 'Oct 2024 – Present',
+    description: 'Developing a health tracking web application using React.js and Python; collaborating with Professor Lutchmie Narine to implement the tracker onto the official Syracuse health center website.',
+    tags: ['React.js', 'Python'],
+    highlights: []
+  },
+  {
+    id: 'minesweeper',
+    title: 'Mine Sweeper Game',
+    date: 'Aug 2022 – Nov 2022',
+    description: 'Created a fully functional Mine Sweeper game with an editable grid size and randomized mine placement algorithms using Python\'s Tkinter GUI library.',
+    tags: ['Python', 'Tkinter', 'Turtle'],
+    highlights: []
   }
 ];
 ---
 
 <BaseLayout title="Projects | Adil Oryspayev">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <h1 class="text-4xl font-bold mb-12">Projects</h1>
+    <h1 class="text-4xl font-bold mb-12 text-gray-100">Technical Projects</h1>
     
     <FilterableTags 
       items={projects.map(p => ({ 
         ...p, 
-        // TypeScript now knows links is optional and has optional properties
         url: p.links?.live || p.links?.github || '#' 
       }))} 
       type="projects" 
@@ -54,16 +80,26 @@ const projects: Project[] = [
 
     <div class="grid gap-8 mt-12">
       {projects.map((project) => (
-        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-           <h2 class="text-2xl font-bold text-gray-100">{project.title}</h2>
-           <p class="text-gray-400 text-sm mb-4">{project.date}</p>
-           <p class="text-gray-300 mb-4">{project.description}</p>
+        <div class="bg-gray-900/40 p-8 rounded-xl border border-gray-800 hover:border-emerald-500/30 transition-all duration-300">
+           <div class="flex justify-between items-start mb-4">
+             <h2 class="text-2xl font-bold text-gray-100">{project.title}</h2>
+             <span class="text-emerald-500 font-mono text-xs">{project.date}</span>
+           </div>
+           <p class="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
            
-           <div class="flex flex-wrap gap-2 mt-4">
+           {project.highlights.length > 0 && (
+             <ul class="mb-6 space-y-2">
+               {project.highlights.map(h => (
+                 <li class="text-sm text-gray-400 flex gap-2">
+                   <span class="text-emerald-500">•</span> {h}
+                 </li>
+               ))}
+             </ul>
+           )}
+           
+           <div class="flex flex-wrap gap-2">
              {project.tags.map(tag => (
-               <span class="px-2 py-1 bg-gray-900 text-xs font-mono rounded text-su-orange-light">
-                 {tag}
-               </span>
+               <span class="tag">{tag}</span>
              ))}
            </div>
         </div>
