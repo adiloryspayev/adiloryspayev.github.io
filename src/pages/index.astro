@@ -3,73 +3,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_CONFIG, SKILLS } from '../config';
 ---
 
-<BaseLayout>
-  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6 animate-fade-in">
-          <div class="inline-block">
-             <span class="px-4 py-2 bg-gray-800 border border-su-orange text-su-orange text-sm font-mono rounded-full">
-              Available for Summer 2026 Internships
-            </span>
-          </div>
-          <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-            <span class="block text-gray-100">Adil Oryspayev</span>
-            <span class="block bg-gradient-to-r from-su-orange to-su-orange-light bg-clip-text text-transparent">CS & Math</span>
-          </h1>
-          <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
-            Syracuse University student (GPA: 3.96) specializing in <span class="text-su-orange font-semibold">Geometric Measure Theory</span> and high-performance systems.
-          </p>
-          <div class="flex flex-wrap gap-4 pt-4">
-            <a href="/experience" class="px-6 py-3 bg-su-orange hover:bg-su-orange-dark text-white font-semibold rounded-lg transition-colors">View Experience</a>
-            <a href="/research" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-100 font-semibold rounded-lg border border-gray-700 transition-colors">Research Work</a>
-          </div>
-        </div>
+<BaseLayout title={SITE_CONFIG.title}>
+  <section class="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
+    <div class="max-w-3xl animate-fade-in">
+      <div class="inline-flex items-center space-x-2 text-emerald-500 font-mono text-sm mb-6">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+        <span>Available for Summer 2026 Internships</span>
+      </div>
+      <h1 class="text-6xl md:text-7xl font-extrabold mb-8 tracking-tighter">
+        Adil <span class="text-gray-500">Oryspayev</span>
+      </h1>
+      <p class="text-xl text-gray-400 leading-relaxed mb-10">
+        Computer Science and Mathematics student at <span class="text-gray-100">Syracuse University</span> (GPA: 3.96)[cite: 145]. 
+        Specializing in high-performance ingestion pipelines and computational research in Geometric Measure Theory[cite: 101, 110].
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/experience" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-gray-950 font-bold rounded-lg transition-all">
+          Experience
+        </a>
+        <a href={SITE_CONFIG.github} target="_blank" class="px-6 py-3 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-100 font-semibold rounded-lg transition-all">
+          GitHub
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800">
-    <h2 class="text-3xl font-bold text-gray-100 mb-12">Technical Arsenal</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-bold text-gray-100 mb-6">Languages</h3>
-        <div class="space-y-4">
+  <section class="max-w-7xl mx-auto px-4 py-20 border-t border-gray-900">
+    <h2 class="section-title">Technical Expertise</h2>
+    
+    
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest">Languages</h3>
+        <div class="flex flex-wrap gap-2">
           {SKILLS.languages.map((skill) => (
-            <div> <div class="flex justify-between text-sm mb-1">
-                <span class="text-gray-300">{skill.name}</span>
-                <span class="text-su-orange font-mono">{skill.level}%</span>
-              </div>
-              <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                <div class="h-full bg-su-orange" style={`width: ${skill.level}%`}></div>
-              </div>
-            </div>
+            <span class="tag">{skill}</span>
           ))}
         </div>
       </div>
 
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-bold text-gray-100 mb-6">Frameworks</h3>
+      <div class="space-y-4">
+        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest">Frameworks</h3>
         <div class="flex flex-wrap gap-2">
           {SKILLS.frameworks.map((framework) => (
-            <span class="px-3 py-1 bg-gray-900 text-sm rounded border border-gray-700 text-gray-300"> {framework}
-            </span>
+            <span class="tag">{framework}</span>
           ))}
         </div>
       </div>
 
-      <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-bold text-gray-100 mb-6">Tools</h3>
+      <div class="space-y-4">
+        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest">Infrastructure</h3>
         <div class="flex flex-wrap gap-2">
           {SKILLS.tools.map((tool) => (
-            <span class="px-3 py-1 bg-gray-900 text-sm rounded border border-gray-700 text-gray-300"> {tool}
-            </span>
+            <span class="tag">{tool}</span>
           ))}
         </div>
       </div>
-
     </div>
   </section>
 </BaseLayout>
