@@ -1,50 +1,50 @@
 ---
 import { SITE_CONFIG } from '../config';
-
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-900 border-t border-gray-800 mt-20">
+<footer class="bg-gray-950 border-t border-gray-900 mt-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-lg font-bold text-gray-100 mb-4">Adil Oryspayev</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          Computer Science & Mathematics student at Syracuse University. Passionate about geometric measure theory, high-performance systems, and building elegant solutions to complex problems.
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold text-gray-100">Adil Oryspayev</h3>
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+          Building high-performance systems and exploring geometric measure theory.
         </p>
       </div>
 
       <div>
-        <h3 class="text-lg font-bold text-gray-100 mb-4">Quick Links</h3>
-        <ul class="space-y-2">
+        <h3 class="text-sm font-semibold text-gray-100 uppercase tracking-wider mb-4">Navigation</h3>
+        <ul class="space-y-3">
           {SITE_CONFIG.navigation.map((item) => (
             <li>
-              <a href={item.href} class="text-gray-400 hover:text-su-orange text-sm transition-colors">
+              <a href={item.href} class="text-gray-500 hover:text-emerald-400 text-sm transition-colors">
                 {item.name}
               </a>
             </li>
           ))}
-          {SITE_CONFIG.showWritingSection && (
-            <li>
-              <a href="/writing" class="text-gray-400 hover:text-su-orange text-sm transition-colors">Writing</a>
-            </li>
-          )}
         </ul>
       </div>
 
       <div>
-        <h3 class="text-lg font-bold text-gray-100 mb-4">Connect</h3>
+        <h3 class="text-sm font-semibold text-gray-100 uppercase tracking-wider mb-4">Connect</h3>
         <div class="space-y-3">
-          <a href={`mailto:${SITE_CONFIG.email}`} class="flex items-center text-gray-400 hover:text-su-orange text-sm transition-colors">
+          <a href={`mailto:${SITE_CONFIG.email}`} class="flex items-center text-gray-500 hover:text-emerald-400 text-sm transition-colors">
             {SITE_CONFIG.email}
           </a>
+          <div class="flex space-x-4 pt-2">
+            <a href={SITE_CONFIG.github} target="_blank" class="text-gray-600 hover:text-gray-300 transition-colors">GitHub</a>
+            <a href={SITE_CONFIG.linkedin} target="_blank" class="text-gray-600 hover:text-gray-300 transition-colors">LinkedIn</a>
+          </div>
         </div>
       </div>
     </div>
     
-    <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-500 text-sm">© {currentYear} Adil Oryspayev. Built with Astro and React.</p>
-        <p class="text-gray-500 text-sm mt-2 md:mt-0">GPA: <span class="text-su-orange font-semibold">3.96</span> | Syracuse University</p>
+    <div class="mt-12 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-600 text-sm">© {currentYear} Adil Oryspayev.</p>
+        <p class="text-gray-600 text-sm mt-2 md:mt-0 font-mono">
+          GPA: <span class="text-emerald-500 font-semibold">3.96</span>
+        </p>
     </div>
   </div>
 </footer>
