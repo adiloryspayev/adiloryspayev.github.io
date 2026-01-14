@@ -10,54 +10,39 @@ import { SITE_CONFIG, SKILLS } from '../config';
         <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
         <span>Available for Summer 2026 Internships</span>
       </div>
-      <h1 class="text-6xl md:text-7xl font-extrabold mb-8 tracking-tighter">
-        Adil <span class="text-gray-500">Oryspayev</span>
+      <h1 class="text-6xl md:text-7xl font-extrabold mb-8 tracking-tighter text-gray-100">
+        Adil Oryspayev
       </h1>
       <p class="text-xl text-gray-400 leading-relaxed mb-10">
-        Computer Science and Mathematics student at <span class="text-gray-100">Syracuse University</span> (GPA: 3.96)[cite: 145]. 
-        Specializing in high-performance ingestion pipelines and computational research in Geometric Measure Theory[cite: 101, 110].
+        Computer Science and Mathematics student at <span class="text-gray-100">Syracuse University</span> (GPA: 3.96). 
+        Researcher in <span class="text-gray-100">Geometric Measure Theory</span> and developer of high-performance data infrastructure.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href="/experience" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-gray-950 font-bold rounded-lg transition-all">
-          Experience
-        </a>
-        <a href={SITE_CONFIG.github} target="_blank" class="px-6 py-3 bg-gray-900 border border-gray-800 hover:border-gray-700 text-gray-100 font-semibold rounded-lg transition-all">
-          GitHub
-        </a>
+        <a href="/experience" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-gray-950 font-bold rounded-lg transition-all">Experience</a>
+        <a href={SITE_CONFIG.github} target="_blank" class="px-6 py-3 bg-gray-900 border border-gray-800 text-gray-100 font-semibold rounded-lg transition-all">GitHub</a>
       </div>
     </div>
   </section>
 
   <section class="max-w-7xl mx-auto px-4 py-20 border-t border-gray-900">
-    <h2 class="section-title">Technical Expertise</h2>
-    
-    
-    
+    <h2 class="section-title">Technical Skills</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <div class="space-y-4">
-        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest">Languages</h3>
+      <div>
+        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest mb-6">Languages</h3>
         <div class="flex flex-wrap gap-2">
-          {SKILLS.languages.map((skill) => (
-            <span class="tag">{skill}</span>
-          ))}
+          {SKILLS.languages.map(skill => <span class="tag">{skill}</span>)}
         </div>
       </div>
-
-      <div class="space-y-4">
-        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest">Frameworks</h3>
+      <div>
+        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest mb-6">Frameworks</h3>
         <div class="flex flex-wrap gap-2">
-          {SKILLS.frameworks.map((framework) => (
-            <span class="tag">{framework}</span>
-          ))}
+          {SKILLS.frameworks.map(fw => <span class="tag">{fw}</span>)}
         </div>
       </div>
-
-      <div class="space-y-4">
-        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest">Infrastructure</h3>
+      <div>
+        <h3 class="text-sm font-mono text-emerald-500 uppercase tracking-widest mb-6">Tools</h3>
         <div class="flex flex-wrap gap-2">
-          {SKILLS.tools.map((tool) => (
-            <span class="tag">{tool}</span>
-          ))}
+          {SKILLS.tools.map(tool => <span class="tag">{tool}</span>)}
         </div>
       </div>
     </div>
