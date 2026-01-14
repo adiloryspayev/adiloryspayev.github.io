@@ -3,22 +3,39 @@ title: "Adil Oryspayev"
 theme: "PaperMod"
 
 params:
+  env: production
+  description: "Computer Science & Mathematics @ Syracuse University"
+  author: "Adil Oryspayev"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowCodeCopyButtons: true
+  
   profileMode:
     enabled: true
     title: "Adil Oryspayev"
-    subtitle: "BS Computer Science & BS Mathematics @ Syracuse University | GPA: 3.96"
+    [cite_start]subtitle: "Sophomore @ Syracuse University | BS CS & BS Math | GPA: 3.96" # [cite: 84, 145]
     imageUrl: "headshot.jpeg"
-    imageWidth: 150
-    imageHeight: 150
+    imageWidth: 160
+    imageHeight: 160
     buttons:
-      - name: "Resume"
+      - name: "📄 Download CV"
         url: "adil_oryspayev_cv.pdf"
+      - name: "🖋️ WRT 205 Portfolio"
+        url: "/writing"
+
   socialIcons:
     - name: "github"
       url: "https://github.com/adiloryspayev"
     - name: "linkedin"
       url: "https://linkedin.com/in/adiloryspayev"
+    - name: "email"
+      url: "mailto:aoryspay@syr.edu"
 
+  # Custom CSS for Syracuse Orange Accents
+  assets:
+    disableHLJS: false
+  
 menu:
   main:
     - name: "Experience"
@@ -30,6 +47,6 @@ menu:
     - name: "Projects"
       url: "/projects"
       weight: 30
-    - name: "Writing" # Delete these 3 lines to hide the tab after the semester
+    - name: "Writing"
       url: "/writing"
       weight: 40
