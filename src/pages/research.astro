@@ -10,32 +10,52 @@ const research = [
     venue: 'Rose-Hulman Undergraduate Mathematics Journal',
     description: 'Co-authored research manuscript investigating computational criteria for rectifiability.',
     tags: ['Measure Theory', 'Python', 'LaTeX'],
-    abstract: 'We discretize continuous pointwise cone conditions into dyadic square structures.'
+    abstract: 'We discretize continuous pointwise cone conditions into dyadic square structures. Derived a quantitative square-based doubling inequality to propagate density bounds across scales.'
+  },
+  {
+    title: 'Combinatorics and Graph Theory',
+    organization: 'Fairfield University',
+    date: 'Jun 2024 – Present',
+    status: 'Ongoing',
+    venue: 'Fairfield University Research Symposium',
+    description: 'Analyzing Anti-van der Waerden numbers on complex graph topologies.',
+    tags: ['Graph Theory', 'Java', 'Backtracking'],
+    abstract: 'Developed Java backtracking algorithms to enumerate coloring states, deriving rigorous bounds that reduced verification search space from exponential to linear complexity.'
+  },
+  {
+    title: 'Sequence Analysis Researcher',
+    organization: 'Polymath Jr',
+    date: 'Jun 2021 – Aug 2021',
+    status: 'Published (arXiv)',
+    venue: 'arXiv:2210.00508',
+    description: 'Implemented advanced metric data structures to optimize query complexity.',
+    tags: ['Suffix Arrays', 'BK-Trees', 'Python'],
+    abstract: 'Implemented advanced metric data structures, including Suffix Arrays and BK-Trees, to optimize query complexity for fuzzy string matching; verified conjectures via Python scripts.'
   }
 ];
 ---
 
 <BaseLayout title="Research | Adil Oryspayev">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <h1 class="text-4xl font-bold mb-12">Research</h1>
+    <h1 class="text-4xl font-bold mb-12 text-gray-100">Research</h1>
     <div class="space-y-12">
       {research.map((paper) => (
-        <article class="bg-gray-800/50 p-8 rounded-xl border-l-4 border-su-orange">
+        <article class="bg-gray-900/40 p-8 rounded-xl border-l-2 border-emerald-500 border-y border-r border-gray-800">
           <div class="mb-4">
-             <span class="px-3 py-1 bg-blue-900 text-blue-300 text-xs font-bold rounded-full uppercase tracking-wide">
-               {paper.status}
-             </span>
-             <h2 class="text-2xl font-bold text-gray-100 mt-2">{paper.title}</h2>
-             <p class="text-gray-400">{paper.organization} • {paper.venue}</p>
+             <div class="flex items-center gap-3 mb-2">
+               <span class="px-2 py-0.5 bg-emerald-900/30 text-emerald-400 text-xs font-bold rounded uppercase tracking-wide border border-emerald-500/20">
+                 {paper.status}
+               </span>
+               <span class="text-gray-500 text-sm font-mono">{paper.date}</span>
+             </div>
+             <h2 class="text-2xl font-bold text-gray-100">{paper.title}</h2>
+             <p class="text-gray-400 mt-1">{paper.organization} • {paper.venue}</p>
           </div>
-          <p class="text-gray-300 mb-6">{paper.abstract}</p>
+          <p class="text-gray-300 mb-6 leading-relaxed">{paper.abstract}</p>
           
           <div class="flex flex-wrap gap-2">
-            {/* FIX: Removed key={tag} below */}
             {paper.tags.map((tag) => (
-              <span class="px-2 py-1 bg-gray-900 text-xs font-mono rounded text-gray-400">
-                {tag}
-              </span>
+              <span class="tag">{tag}</span>
             ))}
           </div>
         </article>
