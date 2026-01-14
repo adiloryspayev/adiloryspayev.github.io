@@ -1,51 +1,86 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const experiences = [
+const professional = [
   {
-    title: 'Data Science Fellow',
-    organization: 'The Data Mine – Purdue University',
-    date: 'Jan 2026 – Present',
-    description: 'Selected for the National Data Mine Network to execute large-scale data analysis on Purdue\'s Anvil HPC cluster.',
-    tags: ['Python', 'Bash', 'SQL', 'Linux', 'HPC']
+    title: 'Incoming Software Engineering Intern (Technology Internship Program)',
+    org: 'M&T Bank',
+    date: 'Jun 2026 – Aug 2026',
+    loc: 'Buffalo, NY',
+    bullets: ['Selected for the Technology Internship Program (TIP)']
   },
   {
     title: 'Software Engineer Intern',
-    organization: 'Syracuse University OSPO',
+    org: 'Syracuse University OSPO',
     date: 'Apr 2025 – Present',
-    description: 'Engineered a high-frequency ingestion pipeline utilizing Qdrant vector storage.',
-    tags: ['Python', 'Docker', 'Qdrant', 'GROBID', 'Linux']
+    bullets: [
+      'Engineered a high-frequency ingestion pipeline utilizing Qdrant vector storage and transformer models to enable semantic search and summarization across large-scale academic corpora',
+      'Optimized system performance by implementing stream-based PDF parsing with GROBID, reducing memory usage during the tokenization and metadata extraction of heavy datasets',
+      'Deployed production infrastructure on Linux VMs using Docker, configuring automated CI/CD workflows and network security protocols'
+    ]
   },
   {
     title: 'IT Manager & Technical Lead',
-    organization: 'The Daily Orange',
+    org: 'The Daily Orange',
     date: 'Jan 2025 – Present',
-    description: 'Directed engineering operations for a high-traffic news platform serving 25,000+ monthly active users.',
-    tags: ['UptimeRobot', 'Cloudflare', 'Backend']
+    bullets: [
+      'Directed engineering operations for a high-traffic news platform, ensuring site reliability and security against cyberattacks for over 25,000 monthly active users',
+      'Managed production infrastructure (UptimeRobot, Cloudflare) and architected revenue-critical backend modules, increasing ad revenue by 15%'
+    ]
+  }
+];
+
+const leadership = [
+  {
+    title: 'Data Structures and Algorithms Teaching Assistant',
+    org: 'Westhill High School',
+    date: 'Aug 2023 – Jun 2024',
+    bullets: [
+      'Taught lessons on Huffman coding, linked lists, and stack implementation when the primary instructor was absent',
+      'Designed comprehensive test cases for lab assignments, graded quizzes, and provided technical support'
+    ]
+  },
+  {
+    title: 'Competitive Coding Club Captain',
+    org: 'Westhill High School',
+    date: 'Aug 2021 – Jun 2024',
+    bullets: [
+      'Led the "A" team to 1st place and multiple top-5 finishes at Quinnipiac University coding competitions using Java',
+      'Coordinated team participation in Lockheed Martin\'s Code Quest, ACSL, and Greenwich Country Day Tigerhacks'
+    ]
   }
 ];
 ---
-
 <BaseLayout title="Experience | Adil Oryspayev">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <h1 class="text-4xl font-bold mb-12">Professional Experience</h1>
-    <div class="space-y-8">
-      {experiences.map((exp) => (
-        <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-100">{exp.title}</h3>
-              <p class="text-su-orange font-semibold">{exp.organization}</p>
-            </div>
-            <span class="text-sm text-gray-400">{exp.date}</span>
+  <div class="max-w-4xl mx-auto px-4 py-20">
+    <h2 class="section-title">Industry Experience</h2>
+    <div class="space-y-12 mb-20">
+      {professional.map(exp => (
+        <div class="group">
+          <div class="flex justify-between items-baseline mb-2">
+            <h3 class="text-xl font-bold text-gray-100">{exp.title}</h3>
+            <span class="text-sm font-mono text-emerald-500">{exp.date}</span>
           </div>
-          <p class="text-gray-300 mb-4">{exp.description}</p>
-          <div class="flex flex-wrap gap-2">
-            {exp.tags.map(tag => (
-              <span class="px-2 py-1 bg-gray-900 text-xs font-mono rounded text-su-orange-light"> {tag}
-              </span>
-            ))}
+          <p class="text-gray-400 font-medium mb-4">{exp.org}</p>
+          <ul class="list-disc list-outside ml-4 space-y-2 text-gray-300 text-sm">
+            {exp.bullets.map(bullet => <li>{bullet}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="section-title">Leadership & Teaching</h2>
+    <div class="space-y-12">
+      {leadership.map(exp => (
+        <div class="group">
+          <div class="flex justify-between items-baseline mb-2">
+            <h3 class="text-xl font-bold text-gray-100">{exp.title}</h3>
+            <span class="text-sm font-mono text-emerald-500">{exp.date}</span>
           </div>
+          <p class="text-gray-400 font-medium mb-4">{exp.org}</p>
+          <ul class="list-disc list-outside ml-4 space-y-2 text-gray-300 text-sm">
+            {exp.bullets.map(bullet => <li>{bullet}</li>)}
+          </ul>
         </div>
       ))}
     </div>
