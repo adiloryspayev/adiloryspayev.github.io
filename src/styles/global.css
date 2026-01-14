@@ -5,31 +5,54 @@
 
 @layer base {
   :root {
-    --accent: #10b981; /* Emerald 500 */
-    --accent-glow: rgba(16, 185, 129, 0.1);
-    --bg-obsidian: #030712; /* Deep Obsidian */
+    /* Emerald Accents */
+    --accent: #10b981;
+    --accent-dark: #059669;
+    --accent-glow: rgba(16, 185, 129, 0.2);
+    
+    /* Obsidian Backgrounds */
+    --bg-obsidian: #0f172a; /* Slate 900 (Safe fallback) */
+    --bg-card: #1e293b; /* Slate 800 */
+  }
+
+  html {
+    background-color: #0f172a; /* Match --bg-obsidian */
   }
 
   body {
-    /* CHANGED: bg-gray-955 -> bg-gray-950 */
-    @apply bg-gray-950 text-gray-300 antialiased;
-    background-color: var(--bg-obsidian);
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-slate-900 text-slate-300 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  .section-title {
-    @apply text-2xl font-bold text-gray-100 border-b border-gray-800 pb-2 mb-8;
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-100 font-bold tracking-tight;
   }
 }
 
 @layer components {
-  .tag {
-    @apply px-2.5 py-0.5 rounded-md text-xs font-mono bg-gray-900 border border-gray-800 text-emerald-400 transition-all duration-200;
-    @apply hover:border-emerald-500/40 hover:bg-emerald-500/5;
+  /* Section Titles */
+  .section-title {
+    @apply text-2xl font-bold text-slate-100 border-b border-slate-800 pb-4 mb-8 flex items-center gap-3;
   }
 
+  /* Professional Cards (Projects/Research) */
   .card {
-    @apply bg-gray-900/40 border border-gray-800 rounded-xl p-6 transition-all duration-300;
-    @apply hover:border-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/5;
+    @apply bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 transition-all duration-300;
+    @apply hover:border-emerald-500/40 hover:bg-slate-800 hover:shadow-xl hover:shadow-emerald-900/10;
+  }
+
+  /* Tech Tags */
+  .tag {
+    @apply px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-emerald-400 transition-colors;
+    @apply hover:border-emerald-500/50 hover:bg-emerald-900/20 cursor-default;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg transition-all shadow-lg shadow-emerald-900/20;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-800 border border-slate-700 hover:border-slate-600 text-slate-200 font-semibold rounded-lg transition-all;
   }
 }
