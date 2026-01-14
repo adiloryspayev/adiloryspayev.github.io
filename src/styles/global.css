@@ -6,29 +6,25 @@
 @layer base {
   :root {
     --accent: #10b981; /* Emerald 500 */
-    --accent-glow: rgba(16, 185, 129, 0.15);
-    --bg-obsidian: #030712; /* Deep Gray 950 */
+    --accent-glow: rgba(16, 185, 129, 0.1);
+    --bg-obsidian: #030712; /* Deep Obsidian */
   }
 
   body {
-    @apply text-gray-300 antialiased;
+    @apply bg-gray-955 text-gray-300 antialiased;
     background-color: var(--bg-obsidian);
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4 {
-    @apply text-gray-100 font-bold tracking-tight;
+  .section-title {
+    @apply text-2xl font-bold text-gray-100 border-b border-gray-800 pb-2 mb-8;
   }
 }
 
 @layer components {
   .tag {
-    @apply px-3 py-1 bg-gray-900 border border-gray-800 rounded-md text-xs font-mono text-emerald-400 transition-all duration-200;
-    @apply hover:border-emerald-500/50 hover:bg-emerald-500/5;
-  }
-
-  .section-title {
-    @apply text-2xl font-bold text-gray-100 border-b border-gray-800 pb-2 mb-8;
+    @apply px-2.5 py-0.5 rounded-md text-xs font-mono bg-gray-900 border border-gray-800 text-emerald-400 transition-all duration-200;
+    @apply hover:border-emerald-500/40 hover:bg-emerald-500/5;
   }
 
   .card {
