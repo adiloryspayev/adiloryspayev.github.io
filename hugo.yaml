@@ -1,0 +1,35 @@
+baseURL: "https://adiloryspayev.github.io/"
+title: "Adil Oryspayev"
+theme: "PaperMod"
+
+params:
+  profileMode:
+    enabled: true
+    title: "Adil Oryspayev"
+    subtitle: "BS Computer Science & BS Mathematics @ Syracuse University | GPA: 3.96"
+    imageUrl: "headshot.jpeg"
+    imageWidth: 150
+    imageHeight: 150
+    buttons:
+      - name: "Resume"
+        url: "adil_oryspayev_cv.pdf"
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/adiloryspayev"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/adiloryspayev"
+
+menu:
+  main:
+    - name: "Experience"
+      url: "/experience"
+      weight: 10
+    - name: "Research"
+      url: "/research"
+      weight: 20
+    - name: "Projects"
+      url: "/projects"
+      weight: 30
+    - name: "Writing" # Delete these 3 lines to hide the tab after the semester
+      url: "/writing"
+      weight: 40
