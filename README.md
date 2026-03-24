@@ -1,3 +1,3 @@
-# Adil Oryspayev — Personal Portfolio https://adiloryspayev.github.io
+# Adil Oryspayev — Personal Portfolio 
 
-A personal portfolio website I built to showcase my background in software engineering, quantitative finance, and theoretical mathematics. 
+A personal portfolio website I built to showcase my background in software engineering, quantitative finance, and theoretical mathematics. https://adiloryspayev.github.io
